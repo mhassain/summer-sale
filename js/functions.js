@@ -24,12 +24,27 @@ function setProductName(ItemName, ProductNum){
 }
 
 // Set Product Price
-function setProductPrice(setPrice, ProductPrice){
-    const NewitemsPrice = document.getElementById(setPrice);
+function setProductPrice(priceFieldID, ProductPrice){
+    const NewitemsPrice = document.getElementById(priceFieldID);
     const NewitemsPriceStr = NewitemsPrice.innerText;
     const currentItmesPrice = parseFloat(NewitemsPriceStr);
     //console.log(currentItmesPrice);
-    const priceOfItemElement = document.getElementById(setPrice);
+
+    const priceOfTheItem = document.getElementById(priceFieldID);
     //console.log(ProductPrice);
-    priceOfItemElement.innerText =  currentItmesPrice + ProductPrice;
+    priceOfTheItem.innerText =  currentItmesPrice + ProductPrice;
+    
+}
+
+// Set discount Price
+function setDiscountPrice(discountFieldID, productAmount){
+    //console.log(productAmount);
+    const newAmount = document.getElementById(discountFieldID);
+    const newAmountStr = newAmount.innerText;
+    const newAmountOfProuct = parseFloat(newAmountStr);
+
+    const discountAmountID = document.getElementById(discountFieldID);
+    //console.log(discountAmountID);
+    discountAmountID.innerText =  productAmount;
+
 }
