@@ -1,16 +1,8 @@
-function myFunction(itemAmount, itemName){
+function priceFunction(itemAmount, itemName){
         // Get the Amount
         const amount = getProductAmount(itemAmount);
         //console.log(amount);
-
-        // if(amount > 0) {
-        //         document.getElementById('btn-purchase').addEventListener('click', function(){
-        //             console.log("va");
-
-        //         }) 
-                
-        //     }
-
+        
         // Get the Product
         const product = getProductName(itemName);
 
@@ -20,8 +12,22 @@ function myFunction(itemAmount, itemName){
         //Set the Product Price (Product Price Field ID, The amount of product)
         setProductPrice('items-price', amount);
 
-        //Set discount price (Discount field ID, The amount of the product)
-        setDiscountPrice('items-discount', amount);
-
 }
+
+function discountFunction(couponCode, itemsPrice){
+        // Get the coupon field value
+        const couponCodeValue = getCouponCode(couponCode);
+        //console.log(couponCodeID);
+
+        // Get the Total Price Value
+        const totalPriceValue = getTotalPrice(itemsPrice);
+        //console.log(totalPriceValue);
+
+        // Set Discounted Price
+        const discountTotal = setDiscountPrice('items-discount', totalPriceValue);
+
+        // Get the Total Pay Field
+        const totalPay = setTotalPay('total-pay', totalPriceValue);
+}
+
 
