@@ -46,14 +46,22 @@ function getCouponCode(CouponFieldID){
     const couponCode = document.getElementById(CouponFieldID);
     const couponCodeValue = couponCode.value;
     //console.log(couponCodeValue);
+
+    couponCode.value = '';
+    
     if(couponCodeValue == 'SELL200'){
         return couponCodeValue;
-        //console.log(couponCodeValue);
-    }else{
-        return (alert("Wrong Coupon Code!"));
-        //console.log('wrong!');
     }
+    else{
+        alert("wrong Coupon Code");
+        //return(NA);
+        error;
+    }
+    //return;
+    //stop();
+    //window.stop();
 }
+
 
 function getTotalPrice(ItemsPriceID){
     const totalPrice = document.getElementById(ItemsPriceID);
@@ -94,3 +102,17 @@ function setTotalPay(TotalPayID, TotalPriceValue){
 
     totalPayFieldAgain.innerText = TotalPriceValue - discountedFieldPrice;
 }
+
+document.getElementById('btn-home').addEventListener('click', function(){
+    // Clear the Total Price
+    const itemsPriceID = document.getElementById('items-price');
+    itemsPriceID.innerText = "00";
+
+    // Clear the Discount Price
+    const discountPriceID = document.getElementById('items-discount');
+    discountPriceID.innerText = "00";
+
+    // Clear the Total Price After Discount
+    const totalPriceID =document.getElementById('total-pay');
+    totalPriceID.innerText = "00";
+})

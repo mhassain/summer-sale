@@ -29,5 +29,3 @@ function discountFunction(couponCode, itemsPrice){
         // Get the Total Pay Field
         const totalPay = setTotalPay('total-pay', totalPriceValue);
 }
-
-
